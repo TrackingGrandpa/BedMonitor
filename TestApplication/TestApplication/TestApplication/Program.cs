@@ -24,7 +24,7 @@ namespace TestApplication
 
             Console.Write("Press enter to continue");
             Console.Read();
-            Console.Write("asd;fklasjd;flkadj;flakdj");
+            Console.Write("asd;fklasjd;flkadj;flakdj trying to commmit from different lcoation");
             Console.Read();
         }
     }
