@@ -24,6 +24,8 @@ namespace TestApplication
 
             Console.Write("Press enter to continue");
             Console.Read();
+            Console.Write("asd;fklasjd;flkadj;flakdj");
+            Console.Read();
         }
     }
 }
