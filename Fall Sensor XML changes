@@ -1,0 +1,37 @@
+    Added the following:
+    
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Fall Detection       "
+        android:layout_marginTop="43dp"
+        android:id="@+id/autoSleepSwitch"
+        android:layout_below="@+id/fallStatus"
+        android:checked="true"
+        android:textSize="16dp"
+        android:layout_centerHorizontal="true" />
+        
+        
+removed: (ignore the arrows)
+
+   <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+        <!--android:text="Threshold Acceleration:  "-->
+        <!--android:id="@+id/threshText"-->
+        <!--android:layout_below="@+id/fallStatus"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="156dp" />-->
+
+    <!--<EditText-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:inputType="numberDecimal"-->
+        <!--android:ems="10"-->
+        <!--android:id="@+id/threshIn"-->
+        <!--android:layout_marginTop="51dp"-->
+        <!--android:layout_below="@+id/threshText"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:text="Enter Acceleration" />-->
