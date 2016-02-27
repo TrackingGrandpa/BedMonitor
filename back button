@@ -1,3 +1,29 @@
+this one is for the Heart Rate class; copy and paste this under the last variable in the xml 
+(you can move it around on the board if you want)
+
+
+    <Button
+        android:text="Back"
+        android:id="@+id/btnbackHR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        
+        
+        
+Fall sensor:
+
+
+    <Button
+        android:text="Back"
+        android:id="@+id/btnbackFS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        
+        
+
+Bed monitor:
+
+
     <Button
         android:text="Back"
         android:id="@+id/btnbackHR"
