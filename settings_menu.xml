@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Automatic Sleep Determination       "
-        android:id="@+id/switch1"
+        android:id="@+id/AutoSleepSwitch"
         android:checked="true"
         android:textSize="16dp"
         android:layout_below="@+id/textView4"
@@ -47,7 +47,7 @@
         android:inputType="time"
         android:ems="10"
         android:text="Enter Time"
-        android:id="@+id/editText"
+        android:id="@+id/AutoOn"
         android:width="100dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="100dp" />
@@ -56,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Auto ON:"
+        android:text="Auto OFF:"
         android:id="@+id/textView6"
         android:textSize="18dp"
         android:padding="0dp"
@@ -69,7 +69,7 @@
         android:inputType="time"
         android:ems="10"
         android:text="Enter Time"
-        android:id="@+id/editText"
+        android:id="@+id/AutoOFF"
         android:width="100dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="150dp" />
@@ -87,7 +87,7 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/switch2"
+        android:id="@+id/FallSensorSwitch"
         android:checked="true"
         android:layout_marginTop="225dp"
         android:layout_marginLeft="280dp" />
@@ -105,7 +105,7 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/switch3"
+        android:id="@+id/HeartRateSwitch"
         android:checked="true"
         android:layout_marginTop="300dp"
         android:layout_marginLeft="280dp" />
