@@ -1,0 +1,64 @@
+BandFallSensorAppActivity.javaimport java.lang.Math;
+
+public void BandFallSensorAppActivity(xAcc,yAcc,zAcc)  //inputs are doubles (acceleration)
+        {
+    int i = 1;  //acceleration array index
+    int k = 1;  //delays reading for 10 cycles
+    boolean alarm = 0;
+
+    int concern_thresh = 3; // threshold at which the acceleration measurement is concerning
+    int alarm_width = 5; // number of concerning values (std sums) over the threshold to trigger an alarm)
+    int over_concern_cnt = 0;  // count how many times you have been above the concern threshold
+
+    double std_x, std_y, std_z, sum_std;
+        double[] Ax = new int[10];
+        double[] Ay = new int[10];
+        double[] Az = new int[10];
+
+  while (i>0)  //force i to equal zero if disabled
+        {
+
+            Ax(i-1)=xAcc;
+            Ay(i-1)=xAcc;
+            Az(i-1)=xAcc;
+
+            i++;
+
+        if k>=10
+        {
+
+
+         
+        for n=1:10 //get standard deviations
+        {
+            Ax_minus_mean_sq(n-1)=Math.pow(Ax(n-1)-Math.sum(Ax)/10,2);
+            Ay_minus_mean_sq(n-1)=Math.pow(Ay(n-1)-Math.sum(Ay)/10,2);
+            Az_minus_mean_sq(n-1)=Math.pow(Az(n-1)-Math.sum(Az)/10,2);
+        }
+
+            x_std = Math.sum(Ax_minus_mean_sq)/3;
+            y_std = Math.sum(Ay_minus_mean_sq)/3;
+            z_std = Math.sum(Az_minus_mean_sq)/3;
+
+        sumStd = x_std + y_std + z_std;  //sum of standard deviations
+
+        if sum_std>concern_thresh      //if sum of stds is too high
+            over_concern_cnt=over_concern_cnt+1;  //add to counter
+        else
+            over_concern_cnt=0;        //counter = 0 if sum has not been too high for consecutive times
+
+        if over_concern_cnt > alarm_width  //concern goes too high
+        {
+        alarm = 1; //send alarm notification
+        }
+
+        if i==10 //reset array
+        i=1;
+
+        }
+        k++;
+        }
+
+
+
+}
