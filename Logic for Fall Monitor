@@ -1,0 +1,61 @@
+Declarations:
+double Ax // x acceleration
+double Ay // y acceleration
+double Az // z acceleration
+
+double sum_std; //variable holds the sum of all of stds
+
+int concern_thresh = 3; // threshold at which the acceleration measurement is concerning
+
+int alarm_width = 5; // number of concerning values (std sums) over the threshold to trigger an alarm) 
+
+int over_concern_cnt = 0;  // count how many times you have been above the concern threshold
+
+int alert_thresh // how long you have to be above the concern threshold to trigger alert
+
+double std_x
+
+double std_y 
+
+double std_z 
+
+int i = 1;
+int k = 1;
+
+Actions:
+
+
+while i > 0
+
+Ax(i) =(read(x_accel));
+Ay(i) = (read(y_accel));
+Az(i) = (read(z_accel));
+
+i++
+
+if k >= 10
+
+sum_std = sum(std(Ax)+std(Ay)+std(Az));
+
+if sum_std > concern_thresh
+	over_concern_cnt = over_concern_cnt + 1;
+else
+over_concern_cnt = 0;
+end // if
+
+if over_concern_cnt > alarm_width
+	//send alert to watch
+	//have a wait period for user to say they are okay
+	send alert to caretaker phone
+end //if
+	
+else
+
+end
+
+if i == 10
+i = 1;
+end
+k++
+
+end
