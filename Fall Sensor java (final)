@@ -1,0 +1,90 @@
+package com.microsoft.band.sdk;
+
+import java.lang.reflect.Array;
+
+/**
+ * Created by adamsmoulder on 2/27/16.
+ */
+public class shit {
+
+
+    public void BandFallSensorAppActivity(double xAcc,double yAcc,double zAcc)  //inputs are doubles (acceleration)
+    {
+        int i = 1;  //acceleration array index
+        int k = 1;  //delays reading for 10 cycles
+        boolean alarm = false;
+
+        int concern_thresh = 3; // threshold at which the acceleration measurement is concerning
+        int alarm_width = 5; // number of concerning values (std sums) over the threshold to trigger an alarm)
+        int over_concern_cnt = 0;  // count how many times you have been above the concern threshold
+
+        double[] Ax = new double[10];
+        double[] Ay = new double[10];
+        double[] Az = new double[10];
+        double[] Ax_minus_mean_sq = new double[10];
+        double[] Ay_minus_mean_sq = new double[10];
+        double[] Az_minus_mean_sq = new double[10];
+        double x_std;
+        double y_std;
+        double z_std;
+        double sumStd;
+
+        while (i>0)  //force i to equal zero if disabled
+        {
+
+            Ax[i-1]=xAcc;
+            Ay[i-1]=yAcc;
+            Az[i-1]=zAcc;
+
+            i++;
+
+            if (k>=10) //disregard first 10 points
+            {
+
+                for(int n = 1; n <= 10; n++) //get standard deviations
+                {
+                    Ax_minus_mean_sq[n-1]=Math.pow(Ax[n-1]-ArrayAdder(Ax)/10,2);
+                    Ay_minus_mean_sq[n-1]=Math.pow(Ay[n-1]-ArrayAdder(Ay)/10,2);
+                    Az_minus_mean_sq[n-1]=Math.pow(Az[n-1]-ArrayAdder(Az)/10,2);
+                }
+
+                x_std = ArrayAdder(Ax_minus_mean_sq)/3;
+                y_std = ArrayAdder(Ay_minus_mean_sq)/3;
+                z_std = ArrayAdder(Az_minus_mean_sq)/3;
+
+                sumStd = x_std + y_std + z_std;  //sum of standard deviations
+
+                if (sumStd > concern_thresh)      //if sum of stds is too high
+                    over_concern_cnt=over_concern_cnt+1;  //add to counter of how many times we exceeded thresh
+                else
+                    over_concern_cnt=0;        //counter = 0 if sum has not been too high for consecutive times
+
+                if (over_concern_cnt > alarm_width)  //concern goes too high
+                {
+                    //Change general status to ALERT
+                    //Change fall sensor status to ALERT
+                    //Push notification to user
+                }
+
+                if (i==10) //reset array
+                i=1;
+
+            }
+            k++;
+        }
+
+
+
+    }
+
+
+    public double ArrayAdder(double[] myArray)
+    {
+        double mySum = 0;
+        for(double value : myArray)
+        {
+            mySum += value;
+        }
+        return mySum;
+    }
+}
