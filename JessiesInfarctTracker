@@ -1,0 +1,54 @@
+package heartTrack;
+
+
+public class heartTrack {
+
+    public static void main(){}
+    public void heartCheck(int HR,boolean status) {
+        HR = 120;
+        status = true;
+        //variables are HR = heart rate (from monitor); status = locked(1) or acquiring(0)
+
+        int low_ct=0;
+        int high_ct=0; //count #times heart rate goes above high threshold or below low threshold
+
+        int high = 180;//bpm
+        int low = 20; //bpm
+
+
+        while (status)   //where status is locked or acquiring
+        {
+
+            if (HR > high)   //if heart rate goes too high
+            {
+                high_ct++;
+            }
+
+
+            if (HR < low)    //if heart rate goes too low
+            {
+                low_ct++;
+            }
+
+            if (HR < high && HR > low) {
+                high_ct = 0;
+                low_ct = 0;
+            }
+
+
+            if (high_ct >= 60)  //heart rate sustained high
+            {
+                //send notification checking if ok
+            }
+
+            if (low_ct >= 20)  //heart rate sustained low
+            {
+                //send alert
+            }
+
+
+
+        }
+    }
+
+}
