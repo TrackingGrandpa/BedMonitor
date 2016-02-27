@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Bed Monitor"
+        android:id="@+id/textView4"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="31dp"
+        android:textSize="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Automatic Sleep Determination       "
+        android:id="@+id/switch1"
+        android:checked="true"
+        android:textSize="16dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Auto ON:"
+        android:id="@+id/textView5"
+        android:textSize="18dp"
+        android:padding="0dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="110dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:text="Enter Time"
+        android:id="@+id/editText"
+        android:width="100dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="100dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Auto ON:"
+        android:id="@+id/textView6"
+        android:textSize="18dp"
+        android:padding="0dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="160dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:text="Enter Time"
+        android:id="@+id/editText"
+        android:width="100dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="150dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Fall Sensor"
+        android:id="@+id/textView7"
+        android:textSize="20dp"
+        android:layout_marginTop="225dp"
+        android:layout_marginLeft="30dp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch2"
+        android:checked="true"
+        android:layout_marginTop="225dp"
+        android:layout_marginLeft="280dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Heart Rate"
+        android:id="@+id/textView8"
+        android:textSize="20dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="30dp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch3"
+        android:checked="true"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="280dp" />
+</RelativeLayout>

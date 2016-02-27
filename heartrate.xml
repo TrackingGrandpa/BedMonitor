@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Heart Rate"
+        android:id="@+id/HRtitle"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/HRDisp"
+        android:layout_marginTop="54dp"
+        android:text="Acquiring..."
+        android:layout_below="@+id/HRtitle"
+        android:layout_alignLeft="@+id/HRClear"
+        android:layout_alignStart="@+id/HRClear" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/HRalerts"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/HRgraph"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="145dp"
+        android:layout_alignLeft="@+id/HRDisp"
+        android:layout_alignStart="@+id/HRDisp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView3"
+        android:text="bpm"
+        android:layout_alignTop="@+id/HRDisp"
+        android:layout_toRightOf="@+id/HRDisp"
+        android:layout_toEndOf="@+id/HRDisp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="36dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear Alert"
+        android:id="@+id/HRClear"
+        android:layout_alignTop="@+id/HRgraph"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
